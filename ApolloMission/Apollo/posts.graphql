@@ -1,0 +1,18 @@
+query AllPosts {
+    allPosts {
+        ...PostObject
+    }
+}
+
+query PostById($id: ID!) {
+    Post(id: $id) {
+        ...PostObject
+    }
+}
+
+fragment PostObject on Post {
+    id
+    title
+    content
+    createdAt
+}
